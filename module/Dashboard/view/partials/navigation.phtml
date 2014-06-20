@@ -1,0 +1,14 @@
+<ul class="nav nav-sidebar">
+    <?php foreach ($navigation as $item): ?>
+    <li><a href="<?=$this->url($item['route'])?>"><?=$item['name']?></a></li>
+    <?php if (isset($item['submenu'])): ?>
+    <li>
+        <ul class="sub list-unstyled">
+        <?php foreach ($item['submenu'] as $subItem): ?>
+            <li><a href="<?=$this->url($subItem['route'])?>"><?=$subItem['name']?></a></li>
+        <?php endforeach?>
+        </ul>
+    </li>
+    <?php endif?>
+    <?php endforeach?>
+</ul>
